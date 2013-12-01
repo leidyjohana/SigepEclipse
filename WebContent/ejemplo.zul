@@ -1,0 +1,80 @@
+<?page title="Mantenimiento" contentType="text/html;charset=UFT=8"?>
+<zk>
+
+<window title="REGISTRO DE ESTUDIANTES" border="normal" width ="500px" height ="500px" apply="controlador.PersonaController">
+   
+    <radiogroup id="Sexo" onCheck="choice2.value = self.selectedItem.label" />
+
+		
+	<grid>
+		<columns>
+		</columns>
+		<rows>
+			<row>
+				Cedula:   <textbox id="txtCedula" height= "20px"/> 
+				<datebox id="db" width="100px" />			
+			</row>
+			<row>
+				Nombre:   <textbox id="txtNombre" height= "20px"/> 
+				<button label="Guardar" id="btnAgregar" width= "100px"/>
+				
+			</row>
+			<row>
+					Apellido: <textbox id="txtApellido" height= "20px"/>
+					<button label="Eliminar" id="btnEliminar" width= "100px" />
+			</row>
+			<row>
+					Edad:
+					<spinner  id= "txtEdad" width= "10" constraint="no negative,no zero"
+                    onChanging="if (event.value.length() > 0 &amp;&amp; Integer.parseInt(event.value) > 0) 
+                    intro.rows = Integer.parseInt(event.value);" />
+           		
+					<button label="Limpiar" id="boton3" width= "100px" style="align: rigtn"/>
+			</row>
+			
+			<row>
+				Sexo:
+			 	<radio label="Femenino" radiogroup="Sexo" />
+                <radio label="Masculino" radiogroup="Sexo" />
+            </row>
+
+			<row>
+			</row>			
+
+							
+		</rows>
+	</grid>	
+			<groupbox>
+			</groupbox>
+			
+<listbox id="listado">
+	<listhead>
+		<listheader label= "Cedula" sort="auto" />
+		<listheader label= "Nombre" sort="auto" />
+		<listheader label= "Apellido" sort="auto" />
+		<listheader label= "Edad" sort="auto" />
+		<listheader label= "Sexo" sort="auto" />
+		<listheader label= "Estatus" sort="auto" />
+	</listhead>
+	<listitem>
+	</listitem>
+	<template name="model">
+					<listitem>
+						<listcell label="${each.cedula}"></listcell>
+						<listcell label="${each.nombre}"></listcell>						
+						<listcell label="${each.apellido}"></listcell>
+						<listcell>
+							<label value="${each.edad}" />
+						</listcell>
+						<listcell label="${each.sexo}"></listcell>
+						<listcell label="${each.status}"></listcell>
+						
+					<!--	<listcell label="${each.estadoEliminacion}"></listcell> -->
+					</listitem>
+				</template>
+</listbox>
+
+			
+</window>
+
+</zk>

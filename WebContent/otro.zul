@@ -1,0 +1,18 @@
+<window title="Aprendiendo ZK =)" border="normal"
+apply="controlador.ControladorEstudiante">
+
+   Holaaaaaa, ya puede registrarse!!
+  
+<hbox>
+	Nombre: <textbox id="txt"/>	
+</hbox>
+<hbox>
+	Apellido: <textbox id="ape"/>	
+</hbox>
+<hbox>
+    Edad: <intbox id="edad" width="150px"/>                   
+</hbox>
+<hbox>
+   <button label="Registrar" id="boton"/>                
+</hbox>
+</window>

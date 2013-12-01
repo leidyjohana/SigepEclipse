@@ -1,0 +1,57 @@
+<?page title="GridListado" contentType="text/html;charset=UFT=8"?>
+<zk>
+
+<window title="REGISTRO DE ESTUDIANTES" border="normal" width ="500px" height ="500px" apply="controlador.Ejemplo2Controller">
+   
+<grid>
+		<columns>
+		</columns>   
+		<rows>
+			<row>
+				<combobox id="comboest" >
+					<template name="model">
+						<comboitem label="${each.nombre}"/>
+					
+					</template>
+				
+				</combobox>
+			</row>			
+			<row>
+			</row>									
+		</rows>
+
+</grid>
+			
+<listbox height= "300px" id="listado">
+	<listhead>
+		<listheader label= "Cedula" sort="auto" />
+		<listheader label= "Nombre" sort="auto" />
+		<listheader label= "Apellido" sort="auto" />
+	</listhead>
+	<listitem>
+	</listitem>
+	<template name="model">
+					<listitem>
+						<listcell label="${each.cedula}"></listcell>
+						<listcell label="${each.nombre}"></listcell>						
+						<listcell label="${each.apellido}"></listcell>
+						<!--<listcell> 	<label value="${each.edad}" /></listcell> -->
+						</listitem>
+				</template>
+</listbox>
+	<grid>
+		<columns>
+		</columns>
+		<rows>
+			<row>
+				<button label="Listar" id="btnListar" width= "100px" style="align: rigtn"/>		
+			</row>			
+			<row>
+			</row>									
+		</rows>
+	</grid>	
+
+			
+</window>
+
+</zk>
